@@ -43,6 +43,24 @@
     sheet.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
   }
 
+  /* Gradient glows follow the pointer (mouse only, eased) */
+  if (!reduced && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+    var tx = 0, ty = 0, mx = 0, my = 0, following = false;
+    var follow = function () {
+      mx += (tx - mx) * 0.06;
+      my += (ty - my) * 0.06;
+      doc.style.setProperty("--mx", mx.toFixed(4));
+      doc.style.setProperty("--my", my.toFixed(4));
+      if (Math.abs(tx - mx) > 0.001 || Math.abs(ty - my) > 0.001) requestAnimationFrame(follow);
+      else following = false;
+    };
+    window.addEventListener("pointermove", function (e) {
+      tx = (e.clientX / window.innerWidth) * 2 - 1;
+      ty = (e.clientY / window.innerHeight) * 2 - 1;
+      if (!following) { following = true; requestAnimationFrame(follow); }
+    }, { passive: true });
+  }
+
   /* Reveals */
   var revealables = document.querySelectorAll(".rv, .step, .stage");
   if ("IntersectionObserver" in window && !reduced) {

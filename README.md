@@ -18,8 +18,8 @@ command. Every push to `main` deploys to production.
 |---|---|---|
 | `index.html` | Home | Hero, the image "window" that opens to full width on scroll, the scroll-filled manifesto, the HostDigital stack (pinned 3D layers), services, tools, process, call to action |
 | `about.html` | About us | Why one house, team photos, three principles, the six teams, image break |
-| `services.html` | Services | Digital marketing, media buying, multimedia, AI automation and agents, sales, websites, web hosting and domains. A sticky index follows the reader; each "Discuss" link pre-selects that service on the contact form (`contact.html?interest=<id>`) |
-| `tools.html` | Tools | Tenderiza (AI tendering), InstantDM (AI lead generation on social media) and hostdigi.co.za (web hosting and AI websites), each with a live HTML product mock |
+| `services.html` | Services | Business consulting, digital marketing, media buying, multimedia, graphic design and print, AI automation and agents, app and software development, sales, websites, web hosting and domains. A sticky index follows the reader; each "Discuss" link pre-selects that service on the contact form (`contact.html?interest=<id>`) |
+| `tools.html` | Tools | Tenderiza (AI tendering), InstantDM (AI lead generation on social media) and hostdigi.co.za (web hosting and AI websites), each with a live HTML product mock, then our software and media partner tkmulti.co.za |
 | `contact.html` | Contact us | Interest chips, enquiry form with validation and a spam trap, contact details |
 
 The header and footer are repeated in every page; change them in all five files.
@@ -37,10 +37,15 @@ All colours and type are tokens at the top of `assets/css/site.css`.
 - **Signature:** the HostDigital stack on the home page. Six glass layers (hosting at the base, sales at the top) pull
   apart as you scroll and light up one at a time.
 
+## Company details
+
+The footer on every page states that Hostdigital is registered and trading as Hostdigi (Pty) Ltd.
+
 ## Motion
 
 `assets/js/site.js` handles everything. It has no dependencies.
 
+- Gradient glows (hero, call to action, stack) drift toward the mouse pointer. Mouse only, eased in `site.js`.
 - Header turns frosted after scrolling and switches to a dark style over dark sections.
 - Headline line reveals on load, fade-up reveals on scroll, parallax image breaks (`data-parallax="<px>"`).
 - Home: window clip-path expansion, word-by-word manifesto fill, and the pinned stack.
