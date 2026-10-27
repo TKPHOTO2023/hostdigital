@@ -28,9 +28,10 @@ The header and footer are repeated in every page; change them in all five files.
 
 All colours and type are tokens at the top of `assets/css/site.css`.
 
-- **Brand gradient:** `--g-a` cobalt `#2d5bff`, `--g-b` iris `#8a4dff`, `--g-c` lagoon `#00c6e0`. Replace these three
-  values with the official hostdigi brand colours and the whole site follows. The logo mark, favicon and the icons
-  on the About page hold the same three colours as SVG stops, so update those too (search for `2d5bff`).
+- **Logo:** `assets/img/logo.png` for light backgrounds and `assets/img/logo-light.png` (white "Host") for dark ones,
+  both cut from `Neon Cube Hostdigital Logo.png`. The cube alone is the favicon (`mark-64.png`, `mark-180.png`).
+- **Brand gradient:** taken from the logo. `--g-a` magenta `#a204e9`, `--g-b` electric blue `#2a3bf0`, `--g-c` cyan
+  `#01a3fb`. The icons on the About page hold the same colours as SVG stops.
 - **Type (Google Fonts):** Schibsted Grotesk for headlines, Newsreader italic for accent words, Geist for body text
   and Geist Mono for labels.
 - **Signature:** the HostDigital stack on the home page. Six glass layers (hosting at the base, sales at the top) pull
@@ -58,7 +59,6 @@ images, so swap in HostDigital's own studio work when it's available.
 
 ## To confirm before go-live
 
-- Official hostdigi brand colours and logo (the current mark is a placeholder in the same spirit: three stacked layers).
 - Contact email address, phone number and physical address.
 - Product URLs for Tenderiza and InstantDM. The buttons currently lead to the contact form with that product
   pre-selected.
