@@ -43,18 +43,19 @@
     sheet.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
   }
 
-  /* Gradient glows follow the pointer (mouse only, eased) */
-  if (!reduced && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  /* Gradient glows follow the mouse or pen (touch ignored), eased */
+  if (!reduced) {
     var tx = 0, ty = 0, mx = 0, my = 0, following = false;
     var follow = function () {
-      mx += (tx - mx) * 0.06;
-      my += (ty - my) * 0.06;
+      mx += (tx - mx) * 0.08;
+      my += (ty - my) * 0.08;
       doc.style.setProperty("--mx", mx.toFixed(4));
       doc.style.setProperty("--my", my.toFixed(4));
       if (Math.abs(tx - mx) > 0.001 || Math.abs(ty - my) > 0.001) requestAnimationFrame(follow);
       else following = false;
     };
     window.addEventListener("pointermove", function (e) {
+      if (e.pointerType === "touch") return;
       tx = (e.clientX / window.innerWidth) * 2 - 1;
       ty = (e.clientY / window.innerHeight) * 2 - 1;
       if (!following) { following = true; requestAnimationFrame(follow); }
